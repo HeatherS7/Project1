@@ -116,6 +116,9 @@ void Lexer::Run(std::string& input) {
                 input.erase(0, maxRead);
             }
         }
+    if (input == "\n") {
+        lineNum++;
+    }
     Token *eofToken = (new End_Of_FileAutomaton())->CreateToken(input.substr(0, 0), lineNum);
     tokens.push_back(eofToken);
 

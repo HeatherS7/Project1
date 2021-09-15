@@ -1,6 +1,7 @@
 #include "CommentAutomaton.h"
 
 void CommentAutomaton::S0(const std::string &input) {
+    type = TokenType::COMMENT;
     if (input[index] == '#') {
         index++;
         if (input[index] == '|') {

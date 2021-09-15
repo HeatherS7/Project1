@@ -27,7 +27,7 @@ int main(int argc, char** argv) {
             completeFile.append(line);
             completeFile.append("\n");
         }
-        completeFile.erase(completeFile.size()-1,completeFile.size()-1);
+        //completeFile.erase(completeFile.size()-1,completeFile.size()-1);
     }
 
     Lexer* lexer = new Lexer();
