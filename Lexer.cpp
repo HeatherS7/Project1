@@ -73,7 +73,7 @@ void Lexer::Run(std::string& input) {
         int maxRead = 0;
         maxAutomaton = automata[0];
         // TODO: handle the whitespace
-        while (input.size() > 0 && input.at(0) == ' ') {
+        while (input.size() > 0 && (input.at(0) == ' ' || input.at(0) == '\t')) {
             input.erase(0, 1); // as long as there is whitespace, remove it from the input
         }
         while (input.size() > 0 && input.at(0) == '\n') {
