@@ -10,7 +10,6 @@ enum class TokenType {
     Q_MARK,
     LEFT_PAREN,
     RIGHT_PAREN,
-    EOFTOKEN,
     MULTIPLY,
     ADD,
     SCHEMES,

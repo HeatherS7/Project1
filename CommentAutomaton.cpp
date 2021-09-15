@@ -19,14 +19,14 @@ void CommentAutomaton::S0(const std::string &input) {
 }
 
 void CommentAutomaton::S1(const std::string &input) {
-    while (input[index]!='\n' && input.size()>index) {
+    while (input[index]!='\n' && input.size()>((unsigned)index)) {
         inputRead++;
         index++;
     }
 }
 
 void CommentAutomaton::S2(const std::string& input) {
-    while (input[index]!= '|' && input.size()>index) {
+    while (input[index]!= '|' && input.size()>((unsigned)index)) {
         if (input[index] == '\n') {
             newLines++;
         }

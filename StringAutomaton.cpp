@@ -11,7 +11,7 @@ void StringAutomaton::S0(const std::string &input) {
 }
 
 void StringAutomaton::S1(const std::string &input) {
-    while ((input.size()>index) && input[index]!= '\'') {
+    while ((input.size()>((unsigned)index)) && input[index]!= '\'') {
         inputRead++;
         index++;
     }
@@ -27,7 +27,7 @@ void StringAutomaton::S2(const std::string &input) {
     if(input[index] == '\'') {
         inputRead++;
         index++;
-        if (input[index]!=EOF && (input[index] == '\'')) {
+        if ((input.size()>((unsigned)index)) && (input[index] == '\'')) {
             inputRead++;
             index++;
             S1(input);

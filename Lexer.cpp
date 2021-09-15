@@ -26,10 +26,10 @@ Lexer::Lexer() {
 
 Lexer::~Lexer() {
     // (check) TODO: need to clean up the memory in `automata` and `tokens`
-    for (int i=0; i < automata.size(); i++) {
+    for (unsigned int i=0; i < automata.size(); i++) {
         delete automata[i];
     }
-    for (int i=0; i<tokens.size(); i++) {
+    for (unsigned int i=0; i<tokens.size(); i++) {
         delete tokens[i];
     }
 }
@@ -86,7 +86,7 @@ void Lexer::Run(std::string& input) {
 
 
         int inputRead = 0;
-        for (int i=0; i < automata.size(); i++) {
+        for (unsigned int i=0; i < automata.size(); i++) {
             inputRead = automata[i]->Start(input);
             // Here is the Parallel part of the algorithm
             if (inputRead > maxRead) {
