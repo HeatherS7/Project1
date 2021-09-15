@@ -1,6 +1,7 @@
 #include "StringAutomaton.h"
 
 void StringAutomaton::S0(const std::string &input) {
+    type = TokenType::STRING;
     if (input[index] == '\'') {
         inputRead = 1;
         index++;
@@ -27,7 +28,7 @@ void StringAutomaton::S2(const std::string &input) {
     if(input[index] == '\'') {
         inputRead++;
         index++;
-        if ((input.size()>((unsigned)index)) && (input[index] == '\'')) {
+        if (input[index]!=EOF && (input[index] == '\'')) {
             inputRead++;
             index++;
             S1(input);
