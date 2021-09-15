@@ -15,7 +15,7 @@ void StringAutomaton::S1(const std::string &input) {
         inputRead++;
         index++;
     }
-    if (input.size()>index) {
+    if (input.size()>((unsigned)index)) {
         S2(input);
     }
     else { // It has reached EOF
