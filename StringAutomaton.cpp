@@ -13,6 +13,9 @@ void StringAutomaton::S0(const std::string &input) {
 
 void StringAutomaton::S1(const std::string &input) {
     while ((input.size()>((unsigned)index)) && input[index]!= '\'') {
+        if (input[index] == '\n') {
+            newLines++;
+        }
         inputRead++;
         index++;
     }
