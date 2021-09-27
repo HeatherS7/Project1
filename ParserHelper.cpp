@@ -30,7 +30,7 @@ void ParserHelper::Match(Token* token, TokenType matchType, int& index) {
         index++;
     }
     else {
-        throw std::exception();
+        throw token;
     }
 }
 
@@ -56,7 +56,7 @@ void ParserHelper::IdList(std::vector<Token *> tokenList, int &index) {
         return;
     }
     else {
-        throw std::exception();
+        throw tokenList.at(index);
     }
 
 }
@@ -72,7 +72,7 @@ void ParserHelper::SchemeList(std::vector<Token *> tokenList, int &index) {
         return;
     }
     else {
-        throw std::exception();
+        throw tokenList.at(index);
     }
 
 }
@@ -88,7 +88,7 @@ void ParserHelper::FactList(std::vector<Token*> tokenList, int &index) {
         return;
     }
     else {
-        throw std::exception();
+        throw tokenList.at(index);
     }
 
 }
@@ -116,7 +116,7 @@ void ParserHelper::StringList(std::vector<Token *> tokenList, int &index) {
         return;
     }
     else {
-        throw std::exception();
+        throw tokenList.at(index);
     }
 }
 
@@ -131,7 +131,7 @@ void ParserHelper::RuleList(std::vector<Token *> tokenList, int &index) {
         return;
     }
     else {
-        throw std::exception();
+        throw tokenList.at(index);
     }
 }
 void ParserHelper::Rule(std::vector<Token *> tokenList, int &index) {
@@ -167,7 +167,7 @@ void ParserHelper::Parameter(std::vector<Token *> tokenList, int &index) {
         Match(tokenList.at(index), TokenType::ID, index);
     }
     else {
-        throw std::exception();
+        throw tokenList.at(index);
     }
 }
 void ParserHelper::ParameterList(std::vector<Token *> tokenList, int &index) {
@@ -182,7 +182,7 @@ void ParserHelper::ParameterList(std::vector<Token *> tokenList, int &index) {
         return;
     }
     else {
-        throw std::exception();
+        throw tokenList.at(index);
     }
 }
 void ParserHelper::PredicateList(std::vector<Token *> tokenList, int &index) {
@@ -197,7 +197,7 @@ void ParserHelper::PredicateList(std::vector<Token *> tokenList, int &index) {
         return;
     }
     else {
-        throw std::exception();
+        throw tokenList.at(index);
     }
 }
 void ParserHelper::Query(std::vector<Token *> tokenList, int &index) {
@@ -216,6 +216,6 @@ void ParserHelper::QueryList(std::vector<Token *> tokenList, int &index) {
         return;
     }
     else {
-        throw std::exception();
+        throw tokenList.at(index);
     }
 }

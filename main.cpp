@@ -41,12 +41,16 @@ int main(int argc, char** argv) {
         myParse.PerformParse(myTokens);
 
     }
-    catch(...) {
-        std::cout << "Failure!";
+    catch(Token* token) {
+        std::cout << "Failure!" << std::endl;
+        std::cout << "  " << token->TokenToString();
         delete lexer;
         input.close();
-        return 1;
+        return 0;
 
+    }
+    catch(...) {
+        std::cout << "Something else went wrong!";
     }
     std::cout << "Success";
 

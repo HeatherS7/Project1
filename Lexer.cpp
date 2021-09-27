@@ -69,7 +69,6 @@ std::vector<Token*> Lexer::Run(std::string& input) {
     while(input.size() > 0) {
         int maxRead = 0;
         maxAutomaton = automata[0];
-        // TODO: handle the whitespace
         while (input.size() > 0 && (input.at(0) == ' ' || input.at(0) == '\t')) {
             input.erase(0, 1); // as long as there is whitespace, remove it from the input
         }
@@ -94,8 +93,10 @@ std::vector<Token*> Lexer::Run(std::string& input) {
             // Here is the Max part of the algorithm
             if (maxRead > 0) {
                 Token *newToken = maxAutomaton->CreateToken(input.substr(0,maxRead), lineNum);
-                lineNum += maxAutomaton->NewLinesRead(); // TODO: figure out the newLines thing
-                tokens.push_back(newToken);
+                lineNum += maxAutomaton->NewLinesRead();
+                if (newToken->GetTokenType() != TokenType::COMMENT) {
+                    tokens.push_back(newToken);
+                }
             }
                 // Create a single character undefined token
             else if (input != ""){
