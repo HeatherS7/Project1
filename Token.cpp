@@ -44,3 +44,7 @@ std::string Token::TokenToString() {
     return returnString;
 }
 
+TokenType Token::GetTokenType() {
+    return fullType;
+}
+

@@ -2,6 +2,7 @@
 #include <fstream>
 #include <iostream>
 #include "Lexer.h"
+#include "Parser.h"
 
 using namespace std;
 
@@ -32,9 +33,22 @@ int main(int argc, char** argv) {
 
     Lexer* lexer = new Lexer();
 
-    lexer->Run(completeFile);
+    std::vector<Token*> myTokens = lexer->Run(completeFile);
 
-    lexer->PrintLexer();
+    //lexer->PrintLexer();
+    Parser myParse;
+    try {
+        myParse.PerformParse(myTokens);
+
+    }
+    catch(...) {
+        std::cout << "Failure!";
+        delete lexer;
+        input.close();
+        return 1;
+
+    }
+    std::cout << "Success";
 
 
     delete lexer;

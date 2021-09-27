@@ -39,6 +39,7 @@ public:
     ~Token();
     Token(TokenType type, std::string description, int line);
     std::string TokenToString();
+    TokenType GetTokenType();
 
 
 
