@@ -8,10 +8,13 @@ private:
     Predicate* headPredicate;
     std::vector<Predicate*> bodyPredicates;
 
+
 public:
     Rule();
     ~Rule();
     std::string RuleToString();
+    void SetHeadPredicate(Predicate* newHPredicate);
+    void AddBodyPredicate(Predicate* newBodyPred);
 
 
 };

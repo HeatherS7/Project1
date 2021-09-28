@@ -18,6 +18,10 @@ public:
     std::vector<Predicate*> GetFactsList();
     std::vector<Predicate*> GetQueriesList();
     std::vector<Rule*> GetRulesList();
+    void AddQuery(Predicate* newQuery);
+    void AddScheme(Predicate* newScheme);
+    void AddFact(Predicate* newFact);
+    void AddRule(Rule* newRule);
 
 };
 

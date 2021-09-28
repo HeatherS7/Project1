@@ -8,7 +8,10 @@ private:
     std::string para;
 
 public:
+    Parameter();
+    Parameter(std::string newPara);
     std::string ParameterToString();
+    void SetParameter(std::string newPara);
 
 };
 

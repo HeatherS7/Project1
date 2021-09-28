@@ -1,7 +1,7 @@
 #include "Rule.h"
 
 Rule::Rule() {
-    headPredicate = new Predicate();
+    Predicate* headPredicate = new Predicate();
 }
 Rule::~Rule() {
     delete headPredicate;
@@ -12,11 +12,20 @@ Rule::~Rule() {
 
 std::string Rule::RuleToString() {
     std::string retString = headPredicate->PredicateToString();
-    retString.append(":-");
+    retString.append(" :- ");
     for (unsigned int i = 0; i<bodyPredicates.size(); i++) {
         retString.append(bodyPredicates.at(i)->PredicateToString());
+        if (i<bodyPredicates.size()-1){
+            retString.append(",");
+        }
     }
     retString.push_back('.');
 
     return retString;
+}
+void Rule::SetHeadPredicate(Predicate *newHPredicate) {
+    headPredicate = newHPredicate;
+}
+void Rule::AddBodyPredicate(Predicate *newBodyPred) {
+    bodyPredicates.push_back(newBodyPred);
 }

@@ -40,6 +40,8 @@ public:
     Token(TokenType type, std::string description, int line);
     std::string TokenToString();
     TokenType GetTokenType();
+    std::string GetTokenDescription();
+    int GetTokenLineNum();
 
 
 

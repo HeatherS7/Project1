@@ -4,8 +4,9 @@ Parser::Parser() {
     index = 0;
 }
 
-void Parser::PerformParse(std::vector<Token*> tokenList) {
-
-    ParserHelper::DatalogProgram(tokenList, index);
+DatalogProgram* Parser::PerformParse(std::vector<Token*> tokenList) {
+    DatalogProgram* myProg = new DatalogProgram();
+    ParserHelper::DatalogProgram(tokenList, index, myProg);
+    return myProg;
 
 }

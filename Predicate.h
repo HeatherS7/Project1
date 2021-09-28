@@ -12,10 +12,13 @@ private:
 
 public:
     Predicate();
+    Predicate(std::string id);
     ~Predicate();
     std::string PredicateToString();
     void SetNumParameters(int num);
     int GetNumParameters();
+    void AddParameter(Parameter* newPara);
+    void AddParameter(std::vector<Parameter*> newParameters);
 
 
 };

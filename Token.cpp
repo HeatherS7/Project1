@@ -48,3 +48,11 @@ TokenType Token::GetTokenType() {
     return fullType;
 }
 
+std::string Token::GetTokenDescription() {
+    return fullDescription;
+}
+
+int Token::GetTokenLineNum() {
+    return lineNum;
+}
+

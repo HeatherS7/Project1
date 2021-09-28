@@ -37,13 +37,16 @@ int main(int argc, char** argv) {
 
     //lexer->PrintLexer();
     Parser myParse;
+    DatalogProgram* myProg = new DatalogProgram();
     try {
-        myParse.PerformParse(myTokens);
+        myProg = myParse.PerformParse(myTokens);
 
     }
     catch(Token* token) {
         std::cout << "Failure!" << std::endl;
         std::cout << "  " << token->TokenToString();
+
+        delete myProg;
         delete lexer;
         input.close();
         return 0;
@@ -52,9 +55,10 @@ int main(int argc, char** argv) {
     catch(...) {
         std::cout << "Something else went wrong!";
     }
-    std::cout << "Success";
+    std::cout << "Success!" << std::endl;
+    std::cout << myProg->DatalogToString();
 
-
+    delete myProg;
     delete lexer;
     input.close();
 
