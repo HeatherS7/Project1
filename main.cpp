@@ -36,8 +36,10 @@ int main(int argc, char** argv) {
     std::vector<Token*> myTokens = lexer->Run(completeFile);
 
     //lexer->PrintLexer();
-    Parser myParse;
-    DatalogProgram* myProg = new DatalogProgram();
+    //Parser myParse;
+   // DatalogProgram* myProg = new DatalogProgram();
+   DatalogProgram* myProg = new DatalogProgram();
+   Parser myParse = Parser(myProg);
     try {
         myProg = myParse.PerformParse(myTokens);
 
@@ -46,6 +48,7 @@ int main(int argc, char** argv) {
         std::cout << "Failure!" << std::endl;
         std::cout << "  " << token->TokenToString();
 
+        //delete myParse;
         delete myProg;
         delete lexer;
         input.close();
@@ -58,6 +61,7 @@ int main(int argc, char** argv) {
     std::cout << "Success!" << std::endl;
     std::cout << myProg->DatalogToString();
 
+    //delete myParse;
     delete myProg;
     delete lexer;
     input.close();
