@@ -1,10 +1,10 @@
 #include "Rule.h"
 
 Rule::Rule() {
-    Predicate* headPredicate = new Predicate();
+    //Predicate* headPredicate = new Predicate();
 }
 Rule::~Rule() {
-    delete headPredicate;
+    //delete headPredicate;
     for (unsigned int i = 0; i<bodyPredicates.size(); i++) {
         delete bodyPredicates.at(i);
     }
