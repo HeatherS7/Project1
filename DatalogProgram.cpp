@@ -34,6 +34,7 @@ std::string DatalogProgram::DatalogToString() {
     for (unsigned int i = 0; i<queries.size(); i++) {
         retString.append("  " + queries.at(i)->PredicateToString() + "?\n");
     }
+    retString.append(DomainToString());
 
     return retString;
 
@@ -67,4 +68,24 @@ void DatalogProgram::AddFact(Predicate* newFact) {
 
 void DatalogProgram::AddRule(Rule* newRule) {
     rules.push_back(newRule);
+}
+
+void DatalogProgram::AddDomain(std::string newDomain) {
+    if (domainSet.find(newDomain) != domainSet.end()) {
+        // It's already in the domain
+    }
+    else {
+        // It's not in the domain, so add it
+        domainSet.insert(newDomain);
+    }
+
+}
+
+std::string DatalogProgram::DomainToString() {
+
+    std::string retString = "Domain(" + std::to_string(domainSet.size()) + "):\n";
+    for (auto it = domainSet.begin(); it != domainSet.end(); it++) {
+        retString.append("  " + *it + "\n");
+    }
+    return retString;
 }

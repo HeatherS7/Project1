@@ -3,7 +3,7 @@ Schemes:
   HasSameAddress(X)
 
 Facts:
-  snap('12345','C Charlie', 'Hello').
+  snap('Hello','Alligator', 'Hello').
   HasSameAddress('welcome').
 
 Rules:

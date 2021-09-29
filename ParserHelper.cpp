@@ -65,8 +65,8 @@ void ParserHelper::IdList(std::vector<Token *> tokenList, int &index, class Pred
 
 }
 
-void ParserHelper::IdList(std::vector<Token *> tokenList, int &index) {
-    /*idList  	-> 	COMMA ID idList | lambda*/
+/*void ParserHelper::IdList(std::vector<Token *> tokenList, int &index) {
+    /*idList  	-> 	COMMA ID idList | lambda
     TokenType nextType = tokenList.at(index)->GetTokenType();
     if (nextType == TokenType::COMMA) { // It's in the First set of idList, so take this route
         Match(tokenList.at(index), TokenType::COMMA, index); // Match COMMA
@@ -80,7 +80,7 @@ void ParserHelper::IdList(std::vector<Token *> tokenList, int &index) {
         throw tokenList.at(index);
     }
 
-}
+}*/
 
 void ParserHelper::SchemeList(std::vector<Token *> tokenList, int &index, class DatalogProgram* myProg) {
     /*schemeList -> scheme schemeList | lambda*/
@@ -104,7 +104,7 @@ void ParserHelper::FactList(std::vector<Token*> tokenList, int &index, class Dat
     /* factList	-> fact factList | lambda*/
     TokenType nextType = tokenList.at(index)->GetTokenType();
     if (nextType == TokenType::ID) { // It's in the First set of factList, so take this route
-        myProg->AddFact(Fact(tokenList, index)); // call fact non-terminal
+        myProg->AddFact(Fact(tokenList, index, myProg)); // call fact non-terminal
         FactList(tokenList, index, myProg); // call factList non-terminal again
     }
     else if (nextType == TokenType::RULES) { // It's in the follow set of factList, so take this route
@@ -116,28 +116,30 @@ void ParserHelper::FactList(std::vector<Token*> tokenList, int &index, class Dat
 
 }
 
-Predicate* ParserHelper::Fact(std::vector<Token*> tokenList, int &index) {
+Predicate* ParserHelper::Fact(std::vector<Token*> tokenList, int &index, class DatalogProgram* myProg) {
     /* fact -> ID LEFT_PAREN STRING stringList RIGHT_PAREN PERIOD*/
     Match(tokenList.at(index), TokenType::ID, index); // Match ID
     class Predicate* factPred = new class Predicate(tokenList.at(index-1)->GetTokenDescription());
     Match(tokenList.at(index), TokenType::LEFT_PAREN, index); // Match LEFT_PAREN
     Match(tokenList.at(index), TokenType::STRING, index); // Match STRING
     factPred->AddParameter(new class Parameter(tokenList.at(index-1)->GetTokenDescription()));
-    StringList(tokenList, index, factPred); // Call stringList
+    myProg->AddDomain(tokenList.at(index-1)->GetTokenDescription());
+    StringList(tokenList, index, factPred, myProg); // Call stringList
     Match(tokenList.at(index), TokenType::RIGHT_PAREN, index); // Match RIGHT_PAREN
     Match(tokenList.at(index), TokenType::PERIOD, index); // Match PERIOD
     return factPred;
 
 }
 
-void ParserHelper::StringList(std::vector<Token *> tokenList, int &index, class Predicate* newPred) {
+void ParserHelper::StringList(std::vector<Token *> tokenList, int &index, class Predicate* newPred, class DatalogProgram* myProg) {
     /* stringList -> COMMA STRING stringList | lambda*/
     TokenType nextType = tokenList.at(index)->GetTokenType();
     if (nextType == TokenType::COMMA) { // It's in the First set of stringList, so take this route
         Match(tokenList.at(index), TokenType::COMMA, index); // Match COMMA
         Match(tokenList.at(index), TokenType::STRING, index); // Match STRING
         newPred->AddParameter(new class Parameter(tokenList.at(index-1)->GetTokenDescription()));
-        StringList(tokenList, index, newPred); // Call stringList again
+        myProg->AddDomain(tokenList.at(index-1)->GetTokenDescription());
+        StringList(tokenList, index, newPred, myProg); // Call stringList again
     }
     else if (nextType == TokenType::RIGHT_PAREN) { // It's in the follow set of stringList, so take this route
         return;
@@ -147,8 +149,8 @@ void ParserHelper::StringList(std::vector<Token *> tokenList, int &index, class 
     }
 }
 
-void ParserHelper::StringList(std::vector<Token *> tokenList, int &index) {
-    /* stringList -> COMMA STRING stringList | lambda*/
+/*void ParserHelper::StringList(std::vector<Token *> tokenList, int &index) {
+    /* stringList -> COMMA STRING stringList | lambda
     TokenType nextType = tokenList.at(index)->GetTokenType();
     if (nextType == TokenType::COMMA) { // It's in the First set of stringList, so take this route
         Match(tokenList.at(index), TokenType::COMMA, index); // Match COMMA
@@ -162,7 +164,7 @@ void ParserHelper::StringList(std::vector<Token *> tokenList, int &index) {
     else {
         throw tokenList.at(index);
     }
-}
+}*/
 
 void ParserHelper::RuleList(std::vector<Token *> tokenList, int &index, class DatalogProgram* myProg) {
     /* ruleList	->	rule ruleList | lambda*/
@@ -195,7 +197,7 @@ Predicate* ParserHelper::HeadPredicate(std::vector<Token *> tokenList, int &inde
     Match(tokenList.at(index), TokenType::LEFT_PAREN, index); // Match LEFT_PAREN
     Match(tokenList.at(index), TokenType::ID, index); // Match ID
     hPred->AddParameter(new class Parameter(tokenList.at(index-1)->GetTokenDescription()));
-    IdList(tokenList, index); // Call idList non-terminal
+    IdList(tokenList, index, hPred); // Call idList non-terminal
     Match(tokenList.at(index), TokenType::RIGHT_PAREN, index); // Match RIGHT_PAREN
     return hPred;
 }
@@ -228,7 +230,7 @@ void ParserHelper::ParameterList(std::vector<Token *> tokenList, int &index, cla
     if (nextType == TokenType::COMMA) { // It's in the First set of parameterList, so take this route
         Match(tokenList.at(index), TokenType::COMMA, index); // Match COMMA
         newPred->AddParameter(Parameter(tokenList, index));
-        ParameterList(tokenList, index);
+        ParameterList(tokenList, index, newPred);
     }
     else if (nextType == TokenType::RIGHT_PAREN) { // It's in the follow set of parameterList, so take this route
         return;
@@ -237,8 +239,8 @@ void ParserHelper::ParameterList(std::vector<Token *> tokenList, int &index, cla
         throw tokenList.at(index);
     }
 }
-void ParserHelper::ParameterList(std::vector<Token *> tokenList, int &index) {
-    /* parameterList -> COMMA parameter parameterList | lambda */
+/*void ParserHelper::ParameterList(std::vector<Token *> tokenList, int &index) {
+    /* parameterList -> COMMA parameter parameterList | lambda
     TokenType nextType = tokenList.at(index)->GetTokenType();
     if (nextType == TokenType::COMMA) { // It's in the First set of parameterList, so take this route
         Match(tokenList.at(index), TokenType::COMMA, index); // Match COMMA
@@ -251,7 +253,7 @@ void ParserHelper::ParameterList(std::vector<Token *> tokenList, int &index) {
     else {
         throw tokenList.at(index);
     }
-}
+}*/
 void ParserHelper::PredicateList(std::vector<Token *> tokenList, int &index, class Rule* newRule) {
     /* predicateList ->	COMMA predicate predicateList | lambda */
     TokenType nextType = tokenList.at(index)->GetTokenType();

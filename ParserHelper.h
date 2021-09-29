@@ -12,19 +12,19 @@ public:
     static void Match(Token* token, TokenType matchType, int& index);
     static Predicate* Scheme(std::vector<Token*> tokenList, int& index);
     static void IdList(std::vector<Token*> tokenList, int& index, Predicate* newPred);
-    static void IdList(std::vector<Token*> tokenList, int& index); // overloaded function for testing
+    //static void IdList(std::vector<Token*> tokenList, int& index); // overloaded function for testing
     static void SchemeList(std::vector<Token*> tokenList, int& index, class DatalogProgram* myProg);
     static void FactList(std::vector<Token*> tokenList, int& index, class DatalogProgram* myProg);
-    static Predicate* Fact(std::vector<Token*> tokenList, int& index);
-    static void StringList(std::vector<Token*> tokenList, int& index, class Predicate* newPred);
-    static void StringList(std::vector<Token*> tokenList, int& index); // overloaded function for testing
+    static Predicate* Fact(std::vector<Token*> tokenList, int& index, class DatalogProgram* myProg);
+    static void StringList(std::vector<Token*> tokenList, int& index, class Predicate* newPred, class DatalogProgram* myProg);
+    //static void StringList(std::vector<Token*> tokenList, int& index); // overloaded function for testing
     static void RuleList(std::vector<Token*> tokenList, int& index, class DatalogProgram* myProg);
     static Rule* Rule(std::vector<Token*> tokenList, int& index);
     static Predicate* HeadPredicate(std::vector<Token*> tokenList, int& index);
     static Predicate* Predicate(std::vector<Token*> tokenList, int& index);
     static Parameter* Parameter(std::vector<Token*> tokenList, int& index);
     static void ParameterList(std::vector<Token*> tokenList, int& index, class Predicate* newPred);
-    static void ParameterList(std::vector<Token*> tokenList, int& index); // overloaded function for testing
+    //static void ParameterList(std::vector<Token*> tokenList, int& index); // overloaded function for testing
     static void PredicateList(std::vector<Token*> tokenList, int& index, class Rule* newRule);
     static class Predicate* Query(std::vector<Token*> tokenList, int& index);
     static void QueryList(std::vector<Token*> tokenList, int& index, class DatalogProgram* myProg);

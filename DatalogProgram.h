@@ -2,6 +2,7 @@
 #define PROJECT1_STARTER_CODE_DATALOGPROGRAM_H
 
 #include "Rule.h"
+#include <set>
 
 class DatalogProgram {
     // A datalog program consists of lists of schemes, facts, rules and queries.
@@ -10,6 +11,7 @@ private:
     std::vector<Predicate*> facts;
     std::vector<Rule*> rules;
     std::vector<Predicate*> queries;
+    std::set<std::string> domainSet;
 
 public:
     ~DatalogProgram();
@@ -22,6 +24,8 @@ public:
     void AddScheme(Predicate* newScheme);
     void AddFact(Predicate* newFact);
     void AddRule(Rule* newRule);
+    void AddDomain(std::string);
+    std::string DomainToString();
 
 };
 
