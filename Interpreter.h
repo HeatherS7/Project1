@@ -6,8 +6,14 @@
 
 class Interpreter {
 private:
+    Database* theData;
+    DatalogProgram* datalogInfo;
 
 public:
+    Interpreter();
+    Interpreter(DatalogProgram* newDatalogInfo);
+    Interpreter(Database* newData, DatalogProgram* newDatalogInfo);
+    Relation* EvaluatePredicate(const Predicate& p);
 
 };
 

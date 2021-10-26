@@ -12,6 +12,8 @@ private:
 public:
     Database();
     void AddMappedRelationship(std::string, Relation);
+    std::string PrintDatabase();
+    void AddTuplesToRelation(std::string headerName, Tuple newTuple);
 
 };
 

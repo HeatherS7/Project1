@@ -85,3 +85,9 @@ Relation Relation::Rename(std::vector<std::string> newAttributes) {
 
     return newRel;
 }
+
+std::string Relation::PrintRelation() const {
+    std::string retString = relHeader.PrintAttributes();
+    // TODO: add functionality to print the tupleSet
+    return retString;
+}

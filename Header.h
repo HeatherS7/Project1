@@ -11,7 +11,7 @@ private:
 public:
     Header();
     Header(std::vector<std::string> newAttributes);
-    std::string PrintAttributes();
+    std::string PrintAttributes() const;
     void SetHeaderAttributes(std::vector<std::string> newAttributes);
     std::string GetAttributeAtIndex(int index);
 

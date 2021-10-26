@@ -19,6 +19,8 @@ public:
     int GetNumParameters();
     void AddParameter(Parameter* newPara);
     void AddParameter(std::vector<Parameter*> newParameters);
+    std::string GetId();
+    std::vector<std::string> GetParameters();
 
 
 };

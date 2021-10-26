@@ -41,3 +41,15 @@ void Predicate::AddParameter(std::vector<Parameter*> newParameters) {
         parameters.push_back(newParameters.at(i));
     }
 }
+
+std::string Predicate::GetId() {
+    return id;
+}
+
+std::vector<std::string> Predicate::GetParameters() {
+    std::vector<std::string> returnVector = {};
+    for (unsigned int i = 0; i < parameters.size(); i++) {
+        returnVector.push_back(parameters.at(i)->ParameterToString());
+    }
+    return returnVector;
+}

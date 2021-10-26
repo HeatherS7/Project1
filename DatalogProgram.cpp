@@ -89,3 +89,21 @@ std::string DatalogProgram::DomainToString() {
     }
     return retString;
 }
+
+void DatalogProgram::EvaluateSchemes(Database* theDatabase) {
+
+    for (unsigned int i = 0; i < schemes.size(); i++) {
+        theDatabase->AddMappedRelationship(schemes.at(i)->GetId(), Relation(schemes.at(i)->GetParameters()));
+    }
+
+}
+
+void DatalogProgram::EvaluateFacts(Database *theDatabase) {
+    /* for each fact ‘f’
+     * make a tuple ‘t’ using the values from ‘f’
+     * add ‘t’ to relation with the same name as ‘f’*/
+    for (unsigned int i = 0; i < facts.size(); i++) {
+        Tuple newTuple = Tuple(facts.at(i)->GetParameters());
+        theDatabase->AddTuplesToRelation(facts.at(i)->GetId(), newTuple);
+    }
+}

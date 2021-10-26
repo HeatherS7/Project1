@@ -8,10 +8,10 @@ Header::Header(std::vector<std::string> newAttributes) {
     attributes = newAttributes;
 }
 
-std::string Header::PrintAttributes() {
+std::string Header::PrintAttributes() const {
     std::string ret = "";
     for (unsigned int i = 0; i < attributes.size(); i++) {
-        ret.append(attributes.at(i) + "\n");
+        ret.append(attributes.at(i) + ",");
     }
     return ret;
 }
