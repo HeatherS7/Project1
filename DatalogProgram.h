@@ -27,8 +27,12 @@ public:
     void AddRule(Rule* newRule);
     void AddDomain(std::string);
     std::string DomainToString();
-    void EvaluateSchemes(Database* theDatabase);
-    void EvaluateFacts(Database* theDatabase);
+    Predicate* GetSchemeAtIndex(int index);
+    int GetSchemesSize();
+    Predicate* GetFactAtIndex(int index);
+    int GetFactsSize();
+    Predicate* GetQueryAtIndex(int index);
+    int GetQueriesSize();
 
 };
 

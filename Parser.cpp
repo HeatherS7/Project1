@@ -59,7 +59,7 @@ Predicate* Parser::Scheme(std::vector<Token*> tokenList) {
     class Predicate* schemePred = new class Predicate(tokenList.at(index-1)->GetTokenDescription());
     Match(tokenList.at(index), TokenType::LEFT_PAREN); // Match LEFT_PAREN
     Match(tokenList.at(index), TokenType::ID); // Match ID
-    schemePred->AddParameter(new class Parameter(tokenList.at(index-1)->GetTokenDescription()));
+    schemePred->AddParameter(new class Parameter(tokenList.at(index-1)->GetTokenDescription(), true));
     IdList(tokenList, schemePred); // Calls the idList non-terminal
     Match(tokenList.at(index), TokenType::RIGHT_PAREN); // Match RIGHT_PAREN
     return schemePred;
@@ -71,7 +71,7 @@ void Parser::IdList(std::vector<Token *> tokenList, Predicate* newPred) {
     if (nextType == TokenType::COMMA) { // It's in the First set of idList, so take this route
         Match(tokenList.at(index), TokenType::COMMA); // Match COMMA
         Match(tokenList.at(index), TokenType::ID); // Match ID
-        newPred->AddParameter(new class Parameter(tokenList.at(index-1)->GetTokenDescription()));
+        newPred->AddParameter(new class Parameter(tokenList.at(index-1)->GetTokenDescription(), true));
         IdList(tokenList, newPred);
     }
     else if (nextType == TokenType::RIGHT_PAREN) { // It's in the follow set of idList, so take this route
@@ -123,7 +123,7 @@ Predicate* Parser::Fact(std::vector<Token*> tokenList) {
     Predicate* factPred = new Predicate(tokenList.at(index-1)->GetTokenDescription());
     Match(tokenList.at(index), TokenType::LEFT_PAREN); // Match LEFT_PAREN
     Match(tokenList.at(index), TokenType::STRING); // Match STRING
-    factPred->AddParameter(new Parameter(tokenList.at(index-1)->GetTokenDescription()));
+    factPred->AddParameter(new Parameter(tokenList.at(index-1)->GetTokenDescription(), false));
     myProg->AddDomain(tokenList.at(index-1)->GetTokenDescription());
     StringList(tokenList, factPred); // Call stringList
     Match(tokenList.at(index), TokenType::RIGHT_PAREN); // Match RIGHT_PAREN
@@ -138,7 +138,7 @@ void Parser::StringList(std::vector<Token *> tokenList, Predicate* newPred) {
     if (nextType == TokenType::COMMA) { // It's in the First set of stringList, so take this route
         Match(tokenList.at(index), TokenType::COMMA); // Match COMMA
         Match(tokenList.at(index), TokenType::STRING); // Match STRING
-        newPred->AddParameter(new Parameter(tokenList.at(index-1)->GetTokenDescription()));
+        newPred->AddParameter(new Parameter(tokenList.at(index-1)->GetTokenDescription(), false));
         myProg->AddDomain(tokenList.at(index-1)->GetTokenDescription());
         StringList(tokenList, newPred); // Call stringList again
     }
@@ -180,7 +180,7 @@ Predicate* Parser::HeadPredicate(std::vector<Token *> tokenList) {
     class Predicate* hPred = new Predicate(tokenList.at(index-1)->GetTokenDescription());
     Match(tokenList.at(index), TokenType::LEFT_PAREN); // Match LEFT_PAREN
     Match(tokenList.at(index), TokenType::ID); // Match ID
-    hPred->AddParameter(new Parameter(tokenList.at(index-1)->GetTokenDescription()));
+    hPred->AddParameter(new Parameter(tokenList.at(index-1)->GetTokenDescription(), true));
     IdList(tokenList, hPred); // Call idList non-terminal
     Match(tokenList.at(index), TokenType::RIGHT_PAREN); // Match RIGHT_PAREN
     return hPred;
@@ -197,16 +197,18 @@ Predicate* Parser::PredicateNonTerminal(std::vector<Token *> tokenList) {
 }
 Parameter* Parser::ParameterNonTerminal(std::vector<Token *> tokenList) {
     /* parameter ->	STRING | ID*/
+    bool isId = false;
     if (tokenList.at(index)->GetTokenType() == TokenType::STRING) {
         Match(tokenList.at(index), TokenType::STRING);
     }
     else if (tokenList.at(index)->GetTokenType() == TokenType::ID) {
         Match(tokenList.at(index), TokenType::ID);
+        isId = true;
     }
     else {
         throw tokenList.at(index);
     }
-    return new class Parameter(tokenList.at(index-1)->GetTokenDescription());
+    return new class Parameter(tokenList.at(index-1)->GetTokenDescription(), isId);
 }
 void Parser::ParameterList(std::vector<Token *> tokenList, Predicate* newPred) {
     /* parameterList -> COMMA parameter parameterList | lambda */

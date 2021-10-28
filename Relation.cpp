@@ -28,13 +28,13 @@ Header Relation::GetHeader() {
     return relHeader;
 }
 
-Relation Relation::Select(int index, std::string value) {
+Relation* Relation::Select(int index, std::string value) {
     std::set<Tuple>::iterator it = tupleSet.begin();
-    Relation newRel = Relation(relHeader);
+    Relation* newRel = new Relation(relHeader);
 
     while (it != tupleSet.end()) {
         if (it->GetValueAtIndex(index) == value) {
-            newRel.AddTuple(*it);
+            newRel->AddTuple(*it);
         }
 
         it++;
@@ -43,13 +43,13 @@ Relation Relation::Select(int index, std::string value) {
     return newRel;
 }
 
-Relation Relation::Select(int index1, int index2) {
+Relation* Relation::Select(int index1, int index2) {
     std::set<Tuple>::iterator it = tupleSet.begin();
-    Relation newRel = Relation(relHeader);
+    Relation* newRel = new Relation(relHeader);
 
     while (it != tupleSet.end()) {
         if (it->GetValueAtIndex(index1) == it->GetValueAtIndex(index2)) {
-            newRel.AddTuple(*it);
+            newRel->AddTuple(*it);
         }
         it++;
     }
@@ -79,15 +79,21 @@ Relation Relation::Project(std::vector<int> indices) {
 }
 
 Relation Relation::Rename(std::vector<std::string> newAttributes) {
-    Relation newRel = Relation(tupleSet);
+    Relation newRel = Relation(Header(newAttributes),tupleSet);
 
-    newRel.GetHeader().SetHeaderAttributes(newAttributes);
+    //newRel.GetHeader().SetHeaderAttributes(newAttributes);
 
     return newRel;
 }
 
 std::string Relation::PrintRelation() const {
     std::string retString = relHeader.PrintAttributes();
-    // TODO: add functionality to print the tupleSet
+    std::set<Tuple>::iterator it = tupleSet.begin();
+
+    while (it != tupleSet.end()) {
+        retString.append(" " + it->PrintTuple() + " ");
+        it++;
+    }
+
     return retString;
 }

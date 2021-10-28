@@ -11,7 +11,7 @@ void Database::AddMappedRelationship(std::string newKey, Relation newRelation) {
 std::string Database::PrintDatabase() {
     std::string retString = "";
     for (auto it = dataMap.cbegin(); it != dataMap.cend(); ++it) {
-        retString.append(it->first + " " + it->second.PrintRelation());
+        retString.append(it->first + " " + it->second.PrintRelation() + "\n");
     }
     return retString;
 
@@ -24,4 +24,12 @@ void Database::AddTuplesToRelation(std::string headerName, Tuple newTuple) {
             break;
         }
     }
+}
+
+Relation Database::FindRelationByName(std::string name) {
+    return dataMap.find(name)->second;
+}
+
+std::map<std::string, Relation> Database::GetMap() {
+    return dataMap;
 }

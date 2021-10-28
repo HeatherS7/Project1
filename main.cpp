@@ -46,7 +46,9 @@ int main(int argc, char** argv) {
    Interpreter theInterpreter = Interpreter(myDatabase, myProg);
     try {
         myProg = myParse.PerformParse(myTokens);
-        myProg->EvaluateSchemes(myDatabase);
+        theInterpreter.EvaluateSchemes();
+        theInterpreter.EvaluateFacts();
+        std::cout << theInterpreter.EvaluateQueries() << std::endl;
         std::cout << myDatabase->PrintDatabase() << std::endl;
 
     }
@@ -57,6 +59,7 @@ int main(int argc, char** argv) {
         //delete myParse;
         delete myProg;
         delete lexer;
+        delete myDatabase;
         input.close();
         return 0;
 
@@ -70,6 +73,7 @@ int main(int argc, char** argv) {
     //delete myParse;
     delete myProg;
     delete lexer;
+    delete myDatabase;
     input.close();
 
     return 0;

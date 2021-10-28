@@ -12,7 +12,7 @@ public:
     Tuple();
     Tuple(std::vector<std::string> newValues);
     bool operator< (const Tuple &rhs) const;
-    std::string PrintTuple();
+    std::string PrintTuple() const;
     std::string GetValueAtIndex(int index) const;
     void SetTuple(std::vector<std::string> newValues);
 

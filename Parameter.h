@@ -6,12 +6,14 @@
 class Parameter {
 private:
     std::string para;
+    bool isId;
 
 public:
     Parameter();
-    Parameter(std::string newPara);
+    Parameter(std::string newPara, bool isId = false);
     std::string ParameterToString();
     void SetParameter(std::string newPara);
+    bool GetIsId();
 
 };
 

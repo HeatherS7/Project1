@@ -8,7 +8,7 @@
 class Relation {
 private:
     std::set<Tuple> tupleSet;
-    Header relHeader;
+    Header relHeader; // consists of a vector of strings
 
 public:
     Relation();
@@ -17,8 +17,8 @@ public:
     Relation(Header newHeader, std::set<Tuple> newTupleSet);
     void AddTuple(Tuple newTuple);
     Header GetHeader();
-    Relation Select(int index, std::string value);
-    Relation Select(int index1, int index2);
+    Relation* Select(int index, std::string value);
+    Relation* Select(int index1, int index2);
     Relation Project(std::vector<int> indices);
     Relation Rename(std::vector<std::string> newAttributes);
     std::string PrintRelation() const;
