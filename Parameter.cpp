@@ -4,8 +4,9 @@ Parameter::Parameter() {
     para = "";
 }
 
-Parameter::Parameter(std::string newPara) {
+Parameter::Parameter(std::string newPara, bool isId) {
     para = newPara;
+    this->isId = isId;
 }
 
 std::string Parameter::ParameterToString() {
@@ -13,4 +14,8 @@ std::string Parameter::ParameterToString() {
 }
 void Parameter::SetParameter(std::string newPara) {
     para = newPara;
+}
+
+bool Parameter::GetIsId() {
+    return isId;
 }

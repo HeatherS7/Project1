@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Project1_Starter_Code"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="msvc8"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\Users\heath\Documents\Programming\CS236Programs\Project1_Starter_Code\cmake-build-debug\Makefile VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\heath\Documents\Programming\CS236Programs\Project1_Starter_Code\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\heath\Documents\Programming\CS236Programs\Project1_Starter_Code\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\heath\Documents\Programming\CS236Programs\Project1_Starter_Code\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Project1_Starter_Code">
+				<Option output="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/cmake-build-debug/Project1_Starter_Code.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/."/>
+					<Add directory="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/TestCases"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\ATLMFC\include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\Users\heath\Documents\Programming\CS236Programs\Project1_Starter_Code\cmake-build-debug\Makefile VERBOSE=1 Project1_Starter_Code"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\heath\Documents\Programming\CS236Programs\Project1_Starter_Code\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\heath\Documents\Programming\CS236Programs\Project1_Starter_Code\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\heath\Documents\Programming\CS236Programs\Project1_Starter_Code\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Project1_Starter_Code/fast">
+				<Option output="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/cmake-build-debug/Project1_Starter_Code.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/."/>
+					<Add directory="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/TestCases"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\ATLMFC\include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.15.26726\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.17134.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\Users\heath\Documents\Programming\CS236Programs\Project1_Starter_Code\cmake-build-debug\Makefile VERBOSE=1 Project1_Starter_Code/fast"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\heath\Documents\Programming\CS236Programs\Project1_Starter_Code\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\heath\Documents\Programming\CS236Programs\Project1_Starter_Code\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\heath\Documents\Programming\CS236Programs\Project1_Starter_Code\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\Users\heath\Documents\Programming\CS236Programs\Project1_Starter_Code\cmake-build-debug\Makefile VERBOSE=1 edit_cache"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\heath\Documents\Programming\CS236Programs\Project1_Starter_Code\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\heath\Documents\Programming\CS236Programs\Project1_Starter_Code\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\heath\Documents\Programming\CS236Programs\Project1_Starter_Code\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\Users\heath\Documents\Programming\CS236Programs\Project1_Starter_Code\cmake-build-debug\Makefile VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\heath\Documents\Programming\CS236Programs\Project1_Starter_Code\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\heath\Documents\Programming\CS236Programs\Project1_Starter_Code\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\heath\Documents\Programming\CS236Programs\Project1_Starter_Code\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/AddAutomaton.cpp">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/AddAutomaton.h">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Automaton.h">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/ColonAutomaton.cpp">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/ColonAutomaton.h">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/ColonDashAutomaton.cpp">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/ColonDashAutomaton.h">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/CommaAutomaton.cpp">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/CommaAutomaton.h">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/CommentAutomaton.cpp">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/CommentAutomaton.h">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Database.cpp">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Database.h">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/DatalogProgram.cpp">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/DatalogProgram.h">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/End_Of_FileAutomaton.h">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/FactsAutomaton.cpp">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/FactsAutomaton.h">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Header.cpp">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Header.h">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/IdAutomaton.cpp">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/IdAutomaton.h">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Interpreter.cpp">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Interpreter.h">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Left_ParenAutomaton.cpp">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Left_ParenAutomaton.h">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Lexer.cpp">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Lexer.h">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/MultiplyAutomaton.cpp">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/MultiplyAutomaton.h">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Parameter.cpp">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Parameter.h">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Parser.cpp">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Parser.h">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/PeriodAutomaton.cpp">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/PeriodAutomaton.h">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Predicate.cpp">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Predicate.h">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Q_MarkAutomaton.cpp">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Q_MarkAutomaton.h">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/QueriesAutomaton.cpp">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/QueriesAutomaton.h">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Relation.cpp">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Relation.h">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Right_ParenAutomaton.cpp">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Right_ParenAutomaton.h">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Rule.cpp">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Rule.h">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/RulesAutomaton.cpp">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/RulesAutomaton.h">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/SchemesAutomaton.cpp">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/SchemesAutomaton.h">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/StringAutomaton.cpp">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/StringAutomaton.h">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Token.cpp">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Token.h">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Tuple.cpp">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Tuple.h">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/UndefinedAutomaton.cpp">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/UndefinedAutomaton.h">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/main.cpp">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/makefile">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

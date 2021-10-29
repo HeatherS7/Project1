@@ -89,3 +89,27 @@ std::string DatalogProgram::DomainToString() {
     }
     return retString;
 }
+
+Predicate* DatalogProgram::GetSchemeAtIndex(int index) {
+    return schemes.at(index);
+}
+
+int DatalogProgram::GetSchemesSize() {
+    return schemes.size();
+}
+
+Predicate* DatalogProgram::GetFactAtIndex(int index) {
+    return facts.at(index);
+}
+
+int DatalogProgram::GetFactsSize() {
+    return facts.size();
+}
+
+Predicate* DatalogProgram::GetQueryAtIndex(int index) {
+    return queries.at(index);
+}
+
+int DatalogProgram::GetQueriesSize() {
+    return queries.size();
+}

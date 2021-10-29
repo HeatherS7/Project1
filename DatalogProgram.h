@@ -3,6 +3,7 @@
 
 #include "Rule.h"
 #include <set>
+#include "Database.h"
 
 class DatalogProgram {
     // A datalog program consists of lists of schemes, facts, rules and queries.
@@ -26,6 +27,12 @@ public:
     void AddRule(Rule* newRule);
     void AddDomain(std::string);
     std::string DomainToString();
+    Predicate* GetSchemeAtIndex(int index);
+    int GetSchemesSize();
+    Predicate* GetFactAtIndex(int index);
+    int GetFactsSize();
+    Predicate* GetQueryAtIndex(int index);
+    int GetQueriesSize();
 
 };
 

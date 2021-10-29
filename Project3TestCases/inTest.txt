@@ -1,0 +1,18 @@
+Schemes:
+  SK(A,B)
+  # SNAP(A,B,C)
+Facts:
+  SK('a','c').
+  SK('b','c').
+  SK('b','b').
+  SK('b','c').
+Rules:
+
+Queries:
+  SK(X,'c')?
+  SK('b','c')?
+  SK(X,X)?
+  SK(A,B)?
+  SK('c','c')?
+  SK(Y, X)?
+  SK('b', 'b')?

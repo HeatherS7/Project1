@@ -16,9 +16,13 @@ public:
     ~Predicate();
     std::string PredicateToString();
     void SetNumParameters(int num);
-    int GetNumParameters();
+    int GetNumParameters() const;
     void AddParameter(Parameter* newPara);
     void AddParameter(std::vector<Parameter*> newParameters);
+    std::string GetId() const;
+    std::vector<std::string> GetParameters() const;
+    std::string GetParameterAtIndex(int index) const;
+    bool GetParameterAtIndexIsId(int index) const;
 
 
 };

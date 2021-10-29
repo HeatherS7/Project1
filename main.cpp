@@ -3,6 +3,8 @@
 #include <iostream>
 #include "Lexer.h"
 #include "Parser.h"
+#include "Interpreter.h"
+#include "Database.h"
 
 using namespace std;
 
@@ -39,9 +41,15 @@ int main(int argc, char** argv) {
     //Parser myParse;
    // DatalogProgram* myProg = new DatalogProgram();
    DatalogProgram* myProg = new DatalogProgram();
+   Database* myDatabase = new Database();
    Parser myParse = Parser(myProg);
+   Interpreter theInterpreter = Interpreter(myDatabase, myProg);
     try {
         myProg = myParse.PerformParse(myTokens);
+        theInterpreter.EvaluateSchemes();
+        theInterpreter.EvaluateFacts();
+        std::cout << theInterpreter.EvaluateQueries() << std::endl;
+        //std::cout << myDatabase->PrintDatabase() << std::endl;
 
     }
     catch(Token* token) {
@@ -51,6 +59,7 @@ int main(int argc, char** argv) {
         //delete myParse;
         delete myProg;
         delete lexer;
+        delete myDatabase;
         input.close();
         return 0;
 
@@ -58,12 +67,13 @@ int main(int argc, char** argv) {
     catch(...) {
         std::cout << "Something else went wrong!";
     }
-    std::cout << "Success!" << std::endl;
-    std::cout << myProg->DatalogToString();
+    //std::cout << "Success!" << std::endl;
+    //std::cout << myProg->DatalogToString();
 
     //delete myParse;
     delete myProg;
     delete lexer;
+    delete myDatabase;
     input.close();
 
     return 0;

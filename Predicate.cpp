@@ -30,8 +30,8 @@ std::string Predicate::PredicateToString() {
 void Predicate::SetNumParameters(int num) {
     numParameters += num;
 }
-int Predicate::GetNumParameters() {
-    return numParameters;
+int Predicate::GetNumParameters() const {
+    return parameters.size(); //numParameters;
 }
 void Predicate::AddParameter(Parameter* newPara) {
     parameters.push_back(newPara);
@@ -40,4 +40,24 @@ void Predicate::AddParameter(std::vector<Parameter*> newParameters) {
     for (unsigned int i=0; i<newParameters.size(); i++) {
         parameters.push_back(newParameters.at(i));
     }
+}
+
+std::string Predicate::GetId() const {
+    return id;
+}
+
+std::vector<std::string> Predicate::GetParameters() const {
+    std::vector<std::string> returnVector = {};
+    for (unsigned int i = 0; i < parameters.size(); i++) {
+        returnVector.push_back(parameters.at(i)->ParameterToString());
+    }
+    return returnVector;
+}
+
+std::string Predicate::GetParameterAtIndex(int index) const {
+    return parameters.at(index)->ParameterToString();
+}
+
+bool Predicate::GetParameterAtIndexIsId(int index) const {
+    return parameters.at(index)->GetIsId();
 }
