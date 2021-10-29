@@ -68,7 +68,7 @@ Relation Relation::Project(std::vector<int> indices) {
     while (it != tupleSet.end()) {
         std::vector<std::string> tupleValues = {};
         for (unsigned int i = 0; i < indices.size(); i++) {
-            tupleValues.push_back(it->GetValueAtIndex(i));
+            tupleValues.push_back(it->GetValueAtIndex(indices.at(i)));
         }
         newRel.AddTuple(Tuple(tupleValues));
         it++;

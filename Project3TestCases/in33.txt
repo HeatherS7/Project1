@@ -1,5 +1,3 @@
-
-
 Schemes:
   bob(A)
 
@@ -9,5 +7,7 @@ Rules:
 
 Queries:
   bob(A)?
+
+
 
 

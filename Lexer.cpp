@@ -75,7 +75,7 @@ std::vector<Token*> Lexer::Run(std::string& input) {
         while (input.size() > 0 && input.at(0) == '\n') {
             lineNum++;
             input.erase(0,1);
-            while (input.size() > 0 && input.at(0) == ' ') {
+            while (input.size() > 0 && (input.at(0) == ' ' || input.at(0) == '\t')) {
                 input.erase(0,1);
             }
         }
