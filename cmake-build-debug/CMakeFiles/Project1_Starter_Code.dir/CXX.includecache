@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Header.h
+vector
+-
+string
+-
+
+C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Relation.cpp
+Relation.h
+C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Relation.h
+
+C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Relation.h
+set
+-
+Tuple.h
+C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Tuple.h
+Header.h
+C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Header.h
+
+C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Tuple.h
+vector
+-
+string
+-
+
