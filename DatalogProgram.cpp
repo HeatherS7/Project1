@@ -94,7 +94,7 @@ Predicate* DatalogProgram::GetSchemeAtIndex(int index) {
     return schemes.at(index);
 }
 
-int DatalogProgram::GetSchemesSize() {
+unsigned int DatalogProgram::GetSchemesSize() {
     return schemes.size();
 }
 
@@ -102,7 +102,7 @@ Predicate* DatalogProgram::GetFactAtIndex(int index) {
     return facts.at(index);
 }
 
-int DatalogProgram::GetFactsSize() {
+unsigned int DatalogProgram::GetFactsSize() {
     return facts.size();
 }
 
@@ -110,6 +110,6 @@ Predicate* DatalogProgram::GetQueryAtIndex(int index) {
     return queries.at(index);
 }
 
-int DatalogProgram::GetQueriesSize() {
+unsigned int DatalogProgram::GetQueriesSize() {
     return queries.size();
 }

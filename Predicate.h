@@ -16,7 +16,7 @@ public:
     ~Predicate();
     std::string PredicateToString();
     void SetNumParameters(int num);
-    int GetNumParameters() const;
+    unsigned int GetNumParameters() const;
     void AddParameter(Parameter* newPara);
     void AddParameter(std::vector<Parameter*> newParameters);
     std::string GetId() const;

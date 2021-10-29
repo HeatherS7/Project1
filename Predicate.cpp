@@ -30,7 +30,7 @@ std::string Predicate::PredicateToString() {
 void Predicate::SetNumParameters(int num) {
     numParameters += num;
 }
-int Predicate::GetNumParameters() const {
+unsigned int Predicate::GetNumParameters() const {
     return parameters.size(); //numParameters;
 }
 void Predicate::AddParameter(Parameter* newPara) {

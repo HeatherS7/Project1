@@ -28,11 +28,11 @@ public:
     void AddDomain(std::string);
     std::string DomainToString();
     Predicate* GetSchemeAtIndex(int index);
-    int GetSchemesSize();
+    unsigned int GetSchemesSize();
     Predicate* GetFactAtIndex(int index);
-    int GetFactsSize();
+    unsigned int GetFactsSize();
     Predicate* GetQueryAtIndex(int index);
-    int GetQueriesSize();
+    unsigned int GetQueriesSize();
 
 };
 

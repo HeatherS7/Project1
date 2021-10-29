@@ -18,7 +18,7 @@ std::string Header::PrintAttributes() const {
 
 void Header::SetHeaderAttributes(std::vector<std::string> newAttributes) {
     if (attributes.size() < newAttributes.size()) {
-        throw std::exception("Error: Invalid rename");
+        throw std::exception();
     }
 
     for (unsigned int i = 0; i < newAttributes.size(); i++) {
