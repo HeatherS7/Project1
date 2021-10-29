@@ -50,8 +50,8 @@ Relation* Interpreter::EvaluatePredicate(const Predicate &p) {
     // project using the positions of the variables
     unsigned int index = 0;
     while (index < variablesWoPlaceholders.size()) {
-        for (unsigned int j = index + 1; j < variablesWoPlaceholders.size(); j++) {
-            if (variablesWoPlaceholders.at(index) == variablesWoPlaceholders.at(j)) {
+        for (unsigned int j = 0 ; j < variablesWoPlaceholders.size(); j++) {
+            if ((variablesWoPlaceholders.at(index) == variablesWoPlaceholders.at(j)) && (index != j)) {
                 variablesWoPlaceholders.erase(variablesWoPlaceholders.begin() + j);
                 headerIndex.erase(headerIndex.begin() + j);
             }
