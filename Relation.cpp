@@ -86,14 +86,36 @@ Relation Relation::Rename(std::vector<std::string> newAttributes) {
     return newRel;
 }
 
-std::string Relation::PrintRelation() const {
-    std::string retString = relHeader.PrintAttributes();
+std::string Relation::PrintRelation(int index) const {
+    std::string retString = "";
     std::set<Tuple>::iterator it = tupleSet.begin();
 
-    while (it != tupleSet.end()) {
-        retString.append(" " + it->PrintTuple() + " ");
-        it++;
+    if (relHeader.GetNumAttributes() > 0) {
+        retString.append("\n");
     }
 
+        /*while (it != tupleSet.end()) {
+            retString.append(relHeader.PrintAttributes() + it->PrintTuple() + "\n");
+            it++;
+        }*/
+    while (it != tupleSet.end()) {
+        retString.append("  ");
+        for (int i = 0; i < relHeader.GetNumAttributes(); i++) {
+            retString.append(relHeader.GetAttributeAtIndex(i) + "=" + it->GetValueAtIndex(i));
+            if (i < relHeader.GetNumAttributes() - 1) {
+                retString.append(", ");
+            } else {
+                retString.append("\n");
+            }
+        }
+        it++;
+    }
+    if (relHeader.GetNumAttributes() == 0) {
+        retString.append("\n");
+    }
     return retString;
+}
+
+int Relation::GetNumTuples() const {
+    return tupleSet.size();
 }

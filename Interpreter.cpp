@@ -48,6 +48,16 @@ Relation* Interpreter::EvaluatePredicate(const Predicate &p) {
     }
 
     // project using the positions of the variables
+    int index = 0;
+    while (index < variablesWoPlaceholders.size()) {
+        for (int j = index + 1; j < variablesWoPlaceholders.size(); j++) {
+            if (variablesWoPlaceholders.at(index) == variablesWoPlaceholders.at(j)) {
+                variablesWoPlaceholders.erase(variablesWoPlaceholders.begin() + j);
+                headerIndex.erase(headerIndex.begin() + j);
+            }
+        }
+        index++;
+    }
     theRelation = theRelation.Project(headerIndex);
 
     // rename to match the names of variables in ‘q’
@@ -86,21 +96,22 @@ rename to match the names of variables in ‘q’
 print the resulting relation
 */
 
-    /*Relation* newRel;
-    std::string retString = "";
-    int numConstants = 0;
-    std::vector<std::string> variables = {};
-    std::vector<int> headerIndex = {};
-    for (unsigned int i = 0; i < datalogInfo->GetQueriesSize(); i++) {
-        Predicate* toEvaluate = datalogInfo->GetQueryAtIndex(i);
-        newRel = EvaluatePredicate(*toEvaluate);
-        retString.append(newRel->PrintRelation());
-    }*/
-
     std::string retString = "";
     for (unsigned int i = 0; i < datalogInfo->GetQueriesSize(); i++) {
         Predicate* predToEval = datalogInfo->GetQueryAtIndex(i);
         Relation* newRel = EvaluatePredicate(*predToEval);
+        std::string hasSolution = "No";
+        if (newRel->GetNumTuples() > 0) {
+            // It has a solution!
+            hasSolution = "Yes";
+        }
+
+        retString.append(datalogInfo->GetQueryAtIndex(i)->PredicateToString() + "? ");
+        if (hasSolution == "Yes") {
+            retString.append(hasSolution + "(" + std::to_string(newRel->GetNumTuples()) + ")");
+        } else {
+            retString.append(hasSolution);
+        }
         retString.append(newRel->PrintRelation());
     }
 

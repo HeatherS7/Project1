@@ -49,7 +49,7 @@ int main(int argc, char** argv) {
         theInterpreter.EvaluateSchemes();
         theInterpreter.EvaluateFacts();
         std::cout << theInterpreter.EvaluateQueries() << std::endl;
-        std::cout << myDatabase->PrintDatabase() << std::endl;
+        //std::cout << myDatabase->PrintDatabase() << std::endl;
 
     }
     catch(Token* token) {

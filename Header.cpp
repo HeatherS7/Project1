@@ -11,7 +11,7 @@ Header::Header(std::vector<std::string> newAttributes) {
 std::string Header::PrintAttributes() const {
     std::string ret = "";
     for (unsigned int i = 0; i < attributes.size(); i++) {
-        ret.append(attributes.at(i) + ",");
+        ret.append("  " + attributes.at(i) + "=");
     }
     return ret;
 }
@@ -27,6 +27,10 @@ void Header::SetHeaderAttributes(std::vector<std::string> newAttributes) {
 
 }
 
-std::string Header::GetAttributeAtIndex(int index) {
+std::string Header::GetAttributeAtIndex(int index) const {
     return attributes.at(index);
+}
+
+int Header::GetNumAttributes() const {
+    return attributes.size();
 }

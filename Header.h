@@ -13,7 +13,8 @@ public:
     Header(std::vector<std::string> newAttributes);
     std::string PrintAttributes() const;
     void SetHeaderAttributes(std::vector<std::string> newAttributes);
-    std::string GetAttributeAtIndex(int index);
+    std::string GetAttributeAtIndex(int index) const;
+    int GetNumAttributes() const;
 
 };
 

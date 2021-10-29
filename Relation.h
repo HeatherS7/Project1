@@ -21,14 +21,9 @@ public:
     Relation* Select(int index1, int index2);
     Relation Project(std::vector<int> indices);
     Relation Rename(std::vector<std::string> newAttributes);
-    std::string PrintRelation() const;
+    std::string PrintRelation(int index = 0) const;
+    int GetNumTuples() const;
 
 };
-
-/* TODO:
- * 1. Pass the Datalog program to the interpreter
- * 2. Get the testing working -- make sure the methods and classes work
- * 3. Get the queries working
- * */
 
 #endif //PROJECT1_STARTER_CODE_RELATION_H
