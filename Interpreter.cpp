@@ -171,7 +171,7 @@ std::string Interpreter::EvaluateRules() {
             newRel = *newRel.Rename(relInDatabase->GetHeader().GetAttributes());
 
             // Union with the relation in the database
-            *newRel.Union(&newRel, relInDatabase, true);
+            Relation dummyRel = *newRel.Union(&newRel, relInDatabase, true);
 
         }
         int afterNumOfTuples = theData->GetNumTuplesInDatabase();

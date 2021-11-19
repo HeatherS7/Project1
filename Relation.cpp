@@ -201,7 +201,7 @@ Relation* Relation::NaturalJoin(Relation *rel1, Relation *rel2) {
             if (!commonAttr) {
                 std::vector<std::string> values = it1->GetValues();
                 newTuple.insert(newTuple.begin(), values.begin(), values.end());
-                values.empty();
+                values.clear();
                 values = it2->GetValues();
                 newTuple.insert(newTuple.end(), values.begin(), values.end());
                 newRel->AddTuple(Tuple(newTuple));
@@ -228,7 +228,7 @@ Relation* Relation::NaturalJoin(Relation *rel1, Relation *rel2) {
                     /*for (unsigned int i = 0; i < colsRel1Same.size(); i++) {
                         newTuple.erase(newTuple.begin() + (colsRel1Same.at(i) - i));
                     }*/
-                    values.empty();
+                    values.clear();
                     values = it2->GetValues();
                     newTuple.insert(newTuple.end(), values.begin(), values.end());
                     for (unsigned int i = 0; i < colsRel2Same.size(); i++) {

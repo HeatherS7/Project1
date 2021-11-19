@@ -31,7 +31,7 @@ std::string Header::GetAttributeAtIndex(int index) const {
     return attributes.at(index);
 }
 
-int Header::GetNumAttributes() const {
+unsigned int Header::GetNumAttributes() const {
     return attributes.size();
 }
 

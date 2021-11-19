@@ -4,6 +4,7 @@
 
 #include <set>
 #include <iostream>
+#include <algorithm>
 #include "Tuple.h"
 #include "Header.h"
 

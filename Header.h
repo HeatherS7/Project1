@@ -15,7 +15,7 @@ public:
     void SetHeaderAttributes(std::vector<std::string> newAttributes);
     std::string GetAttributeAtIndex(int index) const;
     std::vector<std::string> GetAttributes();
-    int GetNumAttributes() const;
+    unsigned int GetNumAttributes() const;
 
 };
 
