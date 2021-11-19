@@ -25,6 +25,7 @@ public:
     Relation* Project(std::vector<int> indices);
     Relation* Rename(std::vector<std::string> newAttributes);
     Relation* Union(Relation* rel1, Relation* rel2, bool printNewTuples = false);
+    void Union(Relation* reltoAdd, bool printSet);
     Relation* NaturalJoin(Relation* rel1, Relation* rel2);
     std::string PrintRelation(int index = 0) const;
     int GetNumTuples() const;

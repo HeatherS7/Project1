@@ -171,7 +171,8 @@ std::string Interpreter::EvaluateRules() {
             newRel = *newRel.Rename(relInDatabase->GetHeader().GetAttributes());
 
             // Union with the relation in the database
-            Relation dummyRel = *newRel.Union(&newRel, relInDatabase, true);
+            //Relation dummyRel = *newRel.Union(&newRel, relInDatabase, true);
+            relInDatabase->Union(&newRel, true);
 
         }
         int afterNumOfTuples = theData->GetNumTuplesInDatabase();
@@ -179,11 +180,6 @@ std::string Interpreter::EvaluateRules() {
         numTimesThroughRules++;
     }
 
-    /*if (numTimesThroughRules > 1) {
-        for (unsigned int i = 0; i < datalogInfo->GetRulesSize(); i++) {
-            relString.append(datalogInfo->GetRuleAtIndex(i)->RuleToString() + "\n");
-        }
-    }*/
     relString.append("\nSchemes populated after " + std::to_string(numTimesThroughRules) + " passes through the Rules.\n");
 
     return relString;

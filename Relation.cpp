@@ -150,6 +150,33 @@ Relation* Relation::Union(Relation *rel1, Relation *rel2, bool printNewTuples) {
     return rel2;
 }
 
+void Relation::Union(Relation* relToAdd, bool printSet) {
+    std::set<Tuple>::iterator it = relToAdd->tupleSet.begin();
+    while (it != relToAdd->tupleSet.end()) {
+        bool isInSet = false;
+        if (tupleSet.find(*it) != tupleSet.end()) {
+            isInSet = true;
+        }
+        tupleSet.insert(*it);
+        if (!isInSet && printSet) {
+            std::string retString = "";
+            for (unsigned int i = 0; i < relToAdd->GetHeader().GetNumAttributes(); i++) {
+                if (i == 0) {
+                    retString.append("  ");
+                }
+                retString.append(relToAdd->GetHeader().GetAttributeAtIndex(i) + "=" + it->GetValueAtIndex(i));
+                if (i < relToAdd->GetHeader().GetNumAttributes() - 1) {
+                    retString.append(", ");
+                } else {
+                    retString.append("\n");
+                }
+            }
+            std::cout << retString;
+        }
+        it++;
+    }
+}
+
 Relation* Relation::NaturalJoin(Relation *rel1, Relation *rel2) {
     Relation* newRel = new Relation();
     // make the header h for the result relation
@@ -188,8 +215,8 @@ Relation* Relation::NaturalJoin(Relation *rel1, Relation *rel2) {
     //	end for
 
     bool commonAttr = colsRel1Same.size() > 0 ? true : false;
-    bool sameAttr = (rel1->relHeader.GetNumAttributes() == rel2->relHeader.GetNumAttributes())
-            ? (rel1->relHeader.GetNumAttributes() == colsRel1Same.size()) ? true : false : false;
+    //bool sameAttr = (rel1->relHeader.GetNumAttributes() == rel2->relHeader.GetNumAttributes())
+    //        ? (rel1->relHeader.GetNumAttributes() == colsRel1Same.size()) ? true : false : false;
 
     std::vector<std::string> newTuple = {};
     std::set<Tuple>::iterator it1 = rel1->tupleSet.begin();
@@ -208,9 +235,11 @@ Relation* Relation::NaturalJoin(Relation *rel1, Relation *rel2) {
                 newTuple.clear();
             }
             // Case 2: All the same attributes
-            else if (sameAttr) {
-                newRel->Union(rel1, rel2);
-            }
+            /*else if (sameAttr) {
+                //newRel->Union(rel1, rel2);
+                newRel->Union(rel1, false);
+                newRel->Union(rel2, false);
+            }*/
             // Case 3: Some common, but not all
             else {
                 bool canCombine = false;
