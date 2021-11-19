@@ -113,3 +113,11 @@ Predicate* DatalogProgram::GetQueryAtIndex(int index) {
 unsigned int DatalogProgram::GetQueriesSize() {
     return queries.size();
 }
+
+unsigned int DatalogProgram::GetRulesSize() {
+    return rules.size();
+}
+
+Rule* DatalogProgram::GetRuleAtIndex(int index) {
+    return rules.at(index);
+}

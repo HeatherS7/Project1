@@ -48,6 +48,7 @@ int main(int argc, char** argv) {
         myProg = myParse.PerformParse(myTokens);
         theInterpreter.EvaluateSchemes();
         theInterpreter.EvaluateFacts();
+        std::cout << theInterpreter.EvaluateRules() << std::endl;
         std::cout << theInterpreter.EvaluateQueries() << std::endl;
         //std::cout << myDatabase->PrintDatabase() << std::endl;
 

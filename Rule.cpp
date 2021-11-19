@@ -29,3 +29,15 @@ void Rule::SetHeadPredicate(Predicate *newHPredicate) {
 void Rule::AddBodyPredicate(Predicate *newBodyPred) {
     bodyPredicates.push_back(newBodyPred);
 }
+
+unsigned int Rule::GetBodyPredicatesSize() {
+    return bodyPredicates.size();
+}
+
+Predicate* Rule::GetBodyPredicateAtIndex(int index) {
+    return bodyPredicates.at(index);
+}
+
+Predicate* Rule::GetHeadPredicate() {
+    return headPredicate;
+}

@@ -6,23 +6,63 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Database.h
+map
+-
+string
+-
+Relation.h
+C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Relation.h
+
+C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/DatalogProgram.h
+Rule.h
+C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Rule.h
+set
+-
+Database.h
+C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Database.h
+
 C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Header.h
 vector
 -
 string
 -
 
-C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Relation.cpp
-Relation.h
-C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Relation.h
+C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Interpreter.cpp
+Interpreter.h
+C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Interpreter.h
+iostream
+-
+
+C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Interpreter.h
+DatalogProgram.h
+C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/DatalogProgram.h
+Database.h
+C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Database.h
+
+C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Parameter.h
+string
+-
+
+C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Predicate.h
+Parameter.h
+C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Parameter.h
+vector
+-
 
 C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Relation.h
 set
+-
+iostream
 -
 Tuple.h
 C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Tuple.h
 Header.h
 C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Header.h
+
+C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Rule.h
+Predicate.h
+C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Predicate.h
 
 C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Tuple.h
 vector

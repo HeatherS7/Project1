@@ -15,6 +15,9 @@ public:
     std::string RuleToString();
     void SetHeadPredicate(Predicate* newHPredicate);
     void AddBodyPredicate(Predicate* newBodyPred);
+    unsigned int GetBodyPredicatesSize();
+    Predicate* GetBodyPredicateAtIndex(int index);
+    Predicate* GetHeadPredicate();
 
 
 };

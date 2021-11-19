@@ -15,6 +15,8 @@ public:
     std::string PrintTuple() const;
     std::string GetValueAtIndex(int index) const;
     void SetTuple(std::vector<std::string> newValues);
+    int GetNumValues() const;
+    std::vector<std::string> GetValues() const;
 
 
 };

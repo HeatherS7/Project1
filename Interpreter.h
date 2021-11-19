@@ -19,12 +19,8 @@ public:
     void EvaluateSchemes();
     void EvaluateFacts();
     std::string EvaluateQueries();
+    std::string EvaluateRules();
 
 };
-
-/* TODO: Format the output
- * count how many options are available and add that to the output
- * fix warnings and errors
- * clean up the code */
 
 #endif //PROJECT1_STARTER_CODE_INTERPRETER_H

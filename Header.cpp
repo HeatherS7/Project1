@@ -34,3 +34,7 @@ std::string Header::GetAttributeAtIndex(int index) const {
 int Header::GetNumAttributes() const {
     return attributes.size();
 }
+
+std::vector<std::string> Header::GetAttributes() {
+    return attributes;
+}

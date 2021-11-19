@@ -30,3 +30,11 @@ std::string Tuple::GetValueAtIndex(int index) const {
 void Tuple::SetTuple(std::vector<std::string> newValues) {
     values = newValues;
 }
+
+int Tuple::GetNumValues() const {
+    return values.size();
+}
+
+std::vector<std::string> Tuple::GetValues() const {
+    return values;
+}

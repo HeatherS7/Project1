@@ -26,10 +26,18 @@ void Database::AddTuplesToRelation(std::string headerName, Tuple newTuple) {
     }
 }
 
-Relation Database::FindRelationByName(std::string name) {
-    return dataMap.find(name)->second;
+Relation* Database::FindRelationByName(std::string name) {
+    return &dataMap.find(name)->second;
 }
 
 std::map<std::string, Relation> Database::GetMap() {
     return dataMap;
+}
+
+int Database::GetNumTuplesInDatabase() const {
+    int numTuples = 0;
+    for (auto it = dataMap.cbegin(); it != dataMap.cend(); ++it) {
+        numTuples += it->second.GetNumTuples();
+    }
+    return numTuples;
 }

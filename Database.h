@@ -14,8 +14,9 @@ public:
     void AddMappedRelationship(std::string, Relation);
     std::string PrintDatabase();
     void AddTuplesToRelation(std::string headerName, Tuple newTuple);
-    Relation FindRelationByName(std::string name);
+    Relation* FindRelationByName(std::string name);
     std::map<std::string, Relation> GetMap();
+    int GetNumTuplesInDatabase() const;
 
 };
 

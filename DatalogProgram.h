@@ -33,6 +33,8 @@ public:
     unsigned int GetFactsSize();
     Predicate* GetQueryAtIndex(int index);
     unsigned int GetQueriesSize();
+    unsigned int GetRulesSize();
+    Rule* GetRuleAtIndex(int index);
 
 };
 
