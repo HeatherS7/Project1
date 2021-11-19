@@ -105,7 +105,7 @@ std::string Relation::PrintRelation(int index) const {
         }*/
     while (it != tupleSet.end()) {
         retString.append("  ");
-        for (int i = 0; i < relHeader.GetNumAttributes(); i++) {
+        for (unsigned int i = 0; i < relHeader.GetNumAttributes(); i++) {
             retString.append(relHeader.GetAttributeAtIndex(i) + "=" + it->GetValueAtIndex(i));
             if (i < relHeader.GetNumAttributes() - 1) {
                 retString.append(", ");
@@ -132,7 +132,7 @@ Relation* Relation::Union(Relation *rel1, Relation *rel2, bool printNewTuples) {
         bool isInSet = rel2->AddTuple(*it1);
         if ((!isInSet) && printNewTuples) {
             std::string retString = "";
-            for (int i = 0; i < rel1->GetHeader().GetNumAttributes(); i++) {
+            for (unsigned int i = 0; i < rel1->GetHeader().GetNumAttributes(); i++) {
                 if (i == 0) {
                     retString.append("  ");
                 }
