@@ -260,6 +260,7 @@ Relation* Relation::NaturalJoin(Relation *rel1, Relation *rel2) {
                     values.clear();
                     values = it2->GetValues();
                     newTuple.insert(newTuple.end(), values.begin(), values.end());
+                    sort(colsRel2Same.begin(), colsRel2Same.end());
                     for (unsigned int i = 0; i < colsRel2Same.size(); i++) {
                         newTuple.erase(newTuple.begin() + it1->GetNumValues() + colsRel2Same.at(i) - i);
                     }
