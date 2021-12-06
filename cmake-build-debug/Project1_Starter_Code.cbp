@@ -140,6 +140,12 @@
 		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/FactsAutomaton.h">
 			<Option target="Project1_Starter_Code"/>
 		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Graph.cpp">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
+		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Graph.h">
+			<Option target="Project1_Starter_Code"/>
+		</Unit>
 		<Unit filename="C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Header.cpp">
 			<Option target="Project1_Starter_Code"/>
 		</Unit>

@@ -5,6 +5,7 @@
 #include "Parser.h"
 #include "Interpreter.h"
 #include "Database.h"
+#include "Graph.h"
 
 using namespace std;
 
@@ -44,6 +45,7 @@ int main(int argc, char** argv) {
    Database* myDatabase = new Database();
    Parser myParse = Parser(myProg);
    Interpreter theInterpreter = Interpreter(myDatabase, myProg);
+
     try {
         myProg = myParse.PerformParse(myTokens);
         theInterpreter.EvaluateSchemes();

@@ -125,62 +125,76 @@ std::string Interpreter::EvaluateRules() {
     std::vector<Relation*> intermediateResults = {};
     std::vector<std::string> tuplePrintout = {};
     Relation newRel = Relation();
+    Graph dependencyGraph = Graph();
+    std::vector<std::vector<int>> SCClist = dependencyGraph.FindSCCs(datalogInfo->GetRulesList());
     bool addedNewTuples = true;
     int numTimesThroughRules = 0;
     std::string relString = "";
-    std::cout << "Rule Evaluation" << std::endl;
+    std::cout << std::endl << "Rule Evaluation" << std::endl;
     for (unsigned int i = 0; i < datalogInfo->GetRulesSize(); i++) {
         tuplePrintout.push_back("");
     }
-    while(addedNewTuples) {
-        int initialNumTuples = theData->GetNumTuplesInDatabase();
-        for (unsigned int i = 0; i < datalogInfo->GetRulesSize(); i++) {
-            std::cout << datalogInfo->GetRuleAtIndex(i)->RuleToString() << std::endl;
+    for (unsigned int a = 0; a < SCClist.size(); a++) {
+        //tuplePrintout.push_back("SCC: " + dependencyGraph.PrintSCCAtIndex(a));
+        std::cout << "SCC: " << dependencyGraph.PrintSCCAtIndex(a) << std::endl;
+        addedNewTuples = true;
+        int numPasses = 0;
+        while(addedNewTuples) {
+            numPasses++;
+            int initialNumTuples = theData->GetNumTuplesInDatabase();
+            for (unsigned int b = 0; b < SCClist.at(a).size(); b++) {
+                    std::cout << datalogInfo->GetRuleAtIndex(SCClist.at(a).at(b))->RuleToString() << std::endl;
 
-            for (unsigned int j = 0; j < datalogInfo->GetRuleAtIndex(i)->GetBodyPredicatesSize(); j++) {
-                Predicate *predToEval = datalogInfo->GetRuleAtIndex(i)->GetBodyPredicateAtIndex(j);
-                intermediateResults.push_back(EvaluatePredicate(*predToEval));
-            }
-            // Join the relations that result
-            if (intermediateResults.size() > 1) {
-                newRel = *newRel.NaturalJoin(intermediateResults.at(0), intermediateResults.at(1));
-                for (unsigned int j = 2; j < intermediateResults.size(); j++) {
-                    newRel = *newRel.NaturalJoin(&newRel, intermediateResults.at(j));
+                for (unsigned int j = 0; j < datalogInfo->GetRuleAtIndex(SCClist.at(a).at(b))->GetBodyPredicatesSize(); j++) {
+                    Predicate *predToEval = datalogInfo->GetRuleAtIndex(SCClist.at(a).at(b))->GetBodyPredicateAtIndex(j);
+                    intermediateResults.push_back(EvaluatePredicate(*predToEval));
                 }
-            } else if (intermediateResults.size() > 0) {
-                newRel = *intermediateResults.at(0);
-            }
-            intermediateResults.clear();
-
-            // Project the columns that appear in the head predicate
-            std::vector<int> indices;
-            std::vector<std::string> attributes = datalogInfo->GetRuleAtIndex(i)->GetHeadPredicate()->GetParameters();
-            std::vector<std::string> headAttributes = newRel.GetHeader().GetAttributes();
-            for (unsigned int i = 0; i < attributes.size(); i++) {
-                auto it = std::find(headAttributes.begin(), headAttributes.end(),
-                                    attributes.at(i));
-                if (it != headAttributes.end()) {
-                    indices.push_back(it - headAttributes.begin());
+                // Join the relations that result
+                if (intermediateResults.size() > 1) {
+                    newRel = *newRel.NaturalJoin(intermediateResults.at(0), intermediateResults.at(1));
+                    for (unsigned int j = 2; j < intermediateResults.size(); j++) {
+                        newRel = *newRel.NaturalJoin(&newRel, intermediateResults.at(j));
+                    }
+                } else if (intermediateResults.size() > 0) {
+                    newRel = *intermediateResults.at(0);
                 }
+                intermediateResults.clear();
+
+                // Project the columns that appear in the head predicate
+                std::vector<int> indices;
+                std::vector<std::string> attributes = datalogInfo->GetRuleAtIndex(SCClist.at(a).at(b))->GetHeadPredicate()->GetParameters();
+                std::vector<std::string> headAttributes = newRel.GetHeader().GetAttributes();
+                for (unsigned int i = 0; i < attributes.size(); i++) {
+                    auto it = std::find(headAttributes.begin(), headAttributes.end(),
+                                        attributes.at(i));
+                    if (it != headAttributes.end()) {
+                        indices.push_back(it - headAttributes.begin());
+                    }
+                }
+                newRel = *newRel.Project(indices);
+
+                // Rename the relation to make it union-compatible
+                Relation *relInDatabase = theData->FindRelationByName(
+                        datalogInfo->GetRuleAtIndex(SCClist.at(a).at(b))->GetHeadPredicate()->GetId());
+                newRel = *newRel.Rename(relInDatabase->GetHeader().GetAttributes());
+
+                // Union with the relation in the database
+                //Relation dummyRel = *newRel.Union(&newRel, relInDatabase, true);
+                relInDatabase->Union(&newRel, true);
+                numTimesThroughRules++;
             }
-            newRel = *newRel.Project(indices);
-
-            // Rename the relation to make it union-compatible
-            Relation *relInDatabase = theData->FindRelationByName(
-                    datalogInfo->GetRuleAtIndex(i)->GetHeadPredicate()->GetId());
-            newRel = *newRel.Rename(relInDatabase->GetHeader().GetAttributes());
-
-            // Union with the relation in the database
-            //Relation dummyRel = *newRel.Union(&newRel, relInDatabase, true);
-            relInDatabase->Union(&newRel, true);
-
+            if ((SCClist.at(a).size() < 2) && (!dependencyGraph.SelfDependent(SCClist.at(a).at(0)))) {
+                addedNewTuples = false;
+            }
+            else {
+                int afterNumOfTuples = theData->GetNumTuplesInDatabase();
+                (afterNumOfTuples > initialNumTuples) ? addedNewTuples = true : addedNewTuples = false;
+            }
         }
-        int afterNumOfTuples = theData->GetNumTuplesInDatabase();
-        (afterNumOfTuples > initialNumTuples) ? addedNewTuples = true : addedNewTuples = false;
-        numTimesThroughRules++;
+        std::cout << numPasses << " passes: " << dependencyGraph.PrintSCCAtIndex(a) << std::endl;
     }
 
-    relString.append("\nSchemes populated after " + std::to_string(numTimesThroughRules) + " passes through the Rules.\n");
+    //relString.append("\nSchemes populated after " + std::to_string(numTimesThroughRules) + " passes through the Rules.\n");
 
     return relString;
 }

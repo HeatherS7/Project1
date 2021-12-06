@@ -625,6 +625,25 @@ CMakeFiles\Project1_Starter_Code.dir\Interpreter.cpp.s: cmake_force
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\Project1_Starter_Code.dir\Interpreter.cpp.s /c C:\Users\heath\Documents\Programming\CS236Programs\Project1_Starter_Code\Interpreter.cpp
 <<
 
+CMakeFiles\Project1_Starter_Code.dir\Graph.cpp.obj: CMakeFiles\Project1_Starter_Code.dir\flags.make
+CMakeFiles\Project1_Starter_Code.dir\Graph.cpp.obj: ..\Graph.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\heath\Documents\Programming\CS236Programs\Project1_Starter_Code\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/Project1_Starter_Code.dir/Graph.cpp.obj"
+	C:\PROGRA~2\MIB055~1\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\Project1_Starter_Code.dir\Graph.cpp.obj /FdCMakeFiles\Project1_Starter_Code.dir\ /FS -c C:\Users\heath\Documents\Programming\CS236Programs\Project1_Starter_Code\Graph.cpp
+<<
+
+CMakeFiles\Project1_Starter_Code.dir\Graph.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Project1_Starter_Code.dir/Graph.cpp.i"
+	C:\PROGRA~2\MIB055~1\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe > CMakeFiles\Project1_Starter_Code.dir\Graph.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\heath\Documents\Programming\CS236Programs\Project1_Starter_Code\Graph.cpp
+<<
+
+CMakeFiles\Project1_Starter_Code.dir\Graph.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Project1_Starter_Code.dir/Graph.cpp.s"
+	C:\PROGRA~2\MIB055~1\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\Project1_Starter_Code.dir\Graph.cpp.s /c C:\Users\heath\Documents\Programming\CS236Programs\Project1_Starter_Code\Graph.cpp
+<<
+
 # Object files for target Project1_Starter_Code
 Project1_Starter_Code_OBJECTS = \
 "CMakeFiles\Project1_Starter_Code.dir\ColonAutomaton.cpp.obj" \
@@ -656,7 +675,8 @@ Project1_Starter_Code_OBJECTS = \
 "CMakeFiles\Project1_Starter_Code.dir\Database.cpp.obj" \
 "CMakeFiles\Project1_Starter_Code.dir\Tuple.cpp.obj" \
 "CMakeFiles\Project1_Starter_Code.dir\Header.cpp.obj" \
-"CMakeFiles\Project1_Starter_Code.dir\Interpreter.cpp.obj"
+"CMakeFiles\Project1_Starter_Code.dir\Interpreter.cpp.obj" \
+"CMakeFiles\Project1_Starter_Code.dir\Graph.cpp.obj"
 
 # External object files for target Project1_Starter_Code
 Project1_Starter_Code_EXTERNAL_OBJECTS =
@@ -691,9 +711,10 @@ Project1_Starter_Code.exe: CMakeFiles\Project1_Starter_Code.dir\Database.cpp.obj
 Project1_Starter_Code.exe: CMakeFiles\Project1_Starter_Code.dir\Tuple.cpp.obj
 Project1_Starter_Code.exe: CMakeFiles\Project1_Starter_Code.dir\Header.cpp.obj
 Project1_Starter_Code.exe: CMakeFiles\Project1_Starter_Code.dir\Interpreter.cpp.obj
+Project1_Starter_Code.exe: CMakeFiles\Project1_Starter_Code.dir\Graph.cpp.obj
 Project1_Starter_Code.exe: CMakeFiles\Project1_Starter_Code.dir\build.make
 Project1_Starter_Code.exe: CMakeFiles\Project1_Starter_Code.dir\objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\heath\Documents\Programming\CS236Programs\Project1_Starter_Code\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Linking CXX executable Project1_Starter_Code.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\heath\Documents\Programming\CS236Programs\Project1_Starter_Code\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Linking CXX executable Project1_Starter_Code.exe"
 	"C:\Program Files\JetBrains\CLion 2021.2.1\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\Project1_Starter_Code.dir --rc=C:\PROGRA~2\WI3CF2~1\10\bin\100171~1.0\x86\rc.exe --mt=C:\PROGRA~2\WI3CF2~1\10\bin\100171~1.0\x86\mt.exe --manifests -- C:\PROGRA~2\MIB055~1\2017\COMMUN~1\VC\Tools\MSVC\1415~1.267\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\Project1_Starter_Code.dir\objects1.rsp @<<
  /out:Project1_Starter_Code.exe /implib:Project1_Starter_Code.lib /pdb:C:\Users\heath\Documents\Programming\CS236Programs\Project1_Starter_Code\cmake-build-debug\Project1_Starter_Code.pdb /version:0.0 /machine:X86 /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
 <<

@@ -47,6 +47,17 @@ CMakeFiles/Project1_Starter_Code.dir/FactsAutomaton.cpp.obj
  C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/FactsAutomaton.cpp
  C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/FactsAutomaton.h
  C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Token.h
+CMakeFiles/Project1_Starter_Code.dir/Graph.cpp.obj
+ C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Database.h
+ C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/DatalogProgram.h
+ C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Graph.cpp
+ C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Graph.h
+ C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Header.h
+ C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Parameter.h
+ C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Predicate.h
+ C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Relation.h
+ C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Rule.h
+ C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Tuple.h
 CMakeFiles/Project1_Starter_Code.dir/Header.cpp.obj
  C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Header.cpp
  C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Header.h
@@ -58,6 +69,7 @@ CMakeFiles/Project1_Starter_Code.dir/IdAutomaton.cpp.obj
 CMakeFiles/Project1_Starter_Code.dir/Interpreter.cpp.obj
  C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Database.h
  C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/DatalogProgram.h
+ C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Graph.h
  C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Header.h
  C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Interpreter.cpp
  C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Interpreter.h
@@ -180,6 +192,7 @@ CMakeFiles/Project1_Starter_Code.dir/main.cpp.obj
  C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Automaton.h
  C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Database.h
  C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/DatalogProgram.h
+ C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Graph.h
  C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Header.h
  C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Interpreter.h
  C:/Users/heath/Documents/Programming/CS236Programs/Project1_Starter_Code/Lexer.h

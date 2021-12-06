@@ -4,6 +4,7 @@
 #include "DatalogProgram.h"
 #include "Database.h"
 #include <algorithm>
+#include "Graph.h"
 
 class Interpreter {
 private:

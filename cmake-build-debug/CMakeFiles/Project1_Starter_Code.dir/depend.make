@@ -47,6 +47,17 @@ CMakeFiles\Project1_Starter_Code.dir\FactsAutomaton.cpp.obj: ..\FactsAutomaton.c
 CMakeFiles\Project1_Starter_Code.dir\FactsAutomaton.cpp.obj: ..\FactsAutomaton.h
 CMakeFiles\Project1_Starter_Code.dir\FactsAutomaton.cpp.obj: ..\Token.h
 
+CMakeFiles\Project1_Starter_Code.dir\Graph.cpp.obj: ..\Database.h
+CMakeFiles\Project1_Starter_Code.dir\Graph.cpp.obj: ..\DatalogProgram.h
+CMakeFiles\Project1_Starter_Code.dir\Graph.cpp.obj: ..\Graph.cpp
+CMakeFiles\Project1_Starter_Code.dir\Graph.cpp.obj: ..\Graph.h
+CMakeFiles\Project1_Starter_Code.dir\Graph.cpp.obj: ..\Header.h
+CMakeFiles\Project1_Starter_Code.dir\Graph.cpp.obj: ..\Parameter.h
+CMakeFiles\Project1_Starter_Code.dir\Graph.cpp.obj: ..\Predicate.h
+CMakeFiles\Project1_Starter_Code.dir\Graph.cpp.obj: ..\Relation.h
+CMakeFiles\Project1_Starter_Code.dir\Graph.cpp.obj: ..\Rule.h
+CMakeFiles\Project1_Starter_Code.dir\Graph.cpp.obj: ..\Tuple.h
+
 CMakeFiles\Project1_Starter_Code.dir\Header.cpp.obj: ..\Header.cpp
 CMakeFiles\Project1_Starter_Code.dir\Header.cpp.obj: ..\Header.h
 
@@ -57,6 +68,7 @@ CMakeFiles\Project1_Starter_Code.dir\IdAutomaton.cpp.obj: ..\Token.h
 
 CMakeFiles\Project1_Starter_Code.dir\Interpreter.cpp.obj: ..\Database.h
 CMakeFiles\Project1_Starter_Code.dir\Interpreter.cpp.obj: ..\DatalogProgram.h
+CMakeFiles\Project1_Starter_Code.dir\Interpreter.cpp.obj: ..\Graph.h
 CMakeFiles\Project1_Starter_Code.dir\Interpreter.cpp.obj: ..\Header.h
 CMakeFiles\Project1_Starter_Code.dir\Interpreter.cpp.obj: ..\Interpreter.cpp
 CMakeFiles\Project1_Starter_Code.dir\Interpreter.cpp.obj: ..\Interpreter.h
@@ -179,6 +191,7 @@ CMakeFiles\Project1_Starter_Code.dir\UndefinedAutomaton.cpp.obj: ..\UndefinedAut
 CMakeFiles\Project1_Starter_Code.dir\main.cpp.obj: ..\Automaton.h
 CMakeFiles\Project1_Starter_Code.dir\main.cpp.obj: ..\Database.h
 CMakeFiles\Project1_Starter_Code.dir\main.cpp.obj: ..\DatalogProgram.h
+CMakeFiles\Project1_Starter_Code.dir\main.cpp.obj: ..\Graph.h
 CMakeFiles\Project1_Starter_Code.dir\main.cpp.obj: ..\Header.h
 CMakeFiles\Project1_Starter_Code.dir\main.cpp.obj: ..\Interpreter.h
 CMakeFiles\Project1_Starter_Code.dir\main.cpp.obj: ..\Lexer.h
