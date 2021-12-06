@@ -29,7 +29,7 @@ void Graph::BuildGraph(std::vector<Rule *> rules) {
     }
 
     // Print out the graph
-    std::cout << "Dependency graph" << std::endl;
+    std::cout << "Dependency Graph" << std::endl;
     for (std::map<int, std::set<int>>::iterator it = edges.begin(); it != edges.end(); it++) {
         std::cout << "R" << std::to_string(it->first) << ":";
         /*for(auto x : it->second) {
